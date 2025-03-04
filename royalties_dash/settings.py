@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'royalties_dash.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # or 'django.db.backends.mysql'
+        'NAME': 'royalty_records_db',       # The database name you specified
+        'USER': 'postgres',       # Master username
+        'PASSWORD': 'postgres',
+        'HOST': 'royalty-records-db.c1w2e6swqh12.us-east-1.rds.amazonaws.com',  # RDS endpoint
+        'PORT': '5432'  # 5432 for PostgreSQL or 3306 for MySQL
     }
 }
 
