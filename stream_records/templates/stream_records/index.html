@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>
+    Top Services
+</h2>
+{% if top_services %}
+    <ul>
+    {% for service in top_services %}
+        <li> #{{ forloop.counter }} {{service.service_name}} ${{service.total_payout}}</li>
+<!--        <li> #{{ forloop.counter }} {{service.service_name}} (${{service.playback_type}})</li>-->
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No services present</p>
+{% endif %}
+</body>
+</html>
